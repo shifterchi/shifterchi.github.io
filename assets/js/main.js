@@ -14,10 +14,11 @@ document.onkeypress = function (e) {
         window.location.href = "images/wyd_rn-min.jpg";
 };
 	document.body.addEventListener("keydown", function (event) {
-    if (event.keyCode === 27) {
+    if (event.keyCode === 77) {
         window.location.replace("https://shop.spreadshirt.com/illinidsp/");
     }
 });
+	
 
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
