@@ -3610,7 +3610,7 @@
 
 		}
 
-
+	
 
 	#main {
 		background-color: #41207b;
@@ -3763,7 +3763,7 @@
 		}
 
 	}
-
+	
 
 
 	#wrapper {
@@ -3773,6 +3773,7 @@
 		transition: filter 0.35s ease, -webkit-filter 0.35s ease, opacity 0.375s ease-out;
 		padding-top: 3.25em;
 	}
+
 
 		#wrapper.is-transitioning {
 			opacity: 0;
