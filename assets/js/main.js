@@ -13,6 +13,11 @@ document.onkeypress = function (e) {
     if (index == 6)
         window.location.href = "images/wyd_rn-min.jpg";
 };
+	document.body.addEventListener("keydown", function (event) {
+    if (event.keyCode === 27) {
+        window.location.replace("/*your url here*/");
+    }
+});
 
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
