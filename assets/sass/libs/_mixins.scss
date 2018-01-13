@@ -1,0 +1,305 @@
+
+@mixin icon($content: false, $where: before) {
+
+	text-decoration: none;
+
+	&:#{$where} {
+
+		@if $content {
+			content: $content;
+		}
+
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-transform: none !important;
+
+	}
+
+}
+@mixin padding($tb, $lr, $pad: (0,0,0,0), $important: null) {
+
+	@if $important {
+		$important: '!important';
+	}
+
+	$x: 0.1em;
+
+	@if unit(_size(element-margin)) == 'rem' {
+		$x: 0.1rem;
+	}
+
+	padding: ($tb + nth($pad,1)) ($lr + nth($pad,2)) max($x, $tb - _size(element-margin) + nth($pad,3)) ($lr + nth($pad,4)) #{$important};
+
+}
+@function svg-url($svg) {
+
+	$svg: str-replace($svg, '"', '\'');
+	$svg: str-replace($svg, '%', '%25');
+	$svg: str-replace($svg, '<', '%3C');
+	$svg: str-replace($svg, '>', '%3E');
+	$svg: str-replace($svg, '&', '%26');
+	$svg: str-replace($svg, '#', '%23');
+	$svg: str-replace($svg, '{', '%7B');
+	$svg: str-replace($svg, '}', '%7D');
+	$svg: str-replace($svg, ';', '%3B');
+
+	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
+
+}
+
+@mixin flexgrid-base($vertical-align: null, $horizontal-align: null) {
+
+		@include vendor('display', 'flex');
+		@include vendor('flex-wrap', 'wrap');
+
+			@if ($vertical-align == top) {
+				@include vendor('align-items', 'flex-start');
+			}
+			@else if ($vertical-align == bottom) {
+				@include vendor('align-items', 'flex-end');
+			}
+			@else if ($vertical-align == center) {
+				@include vendor('align-items', 'center');
+			}
+			@else {
+				@include vendor('align-items', 'stretch');
+			}
+
+			@if ($horizontal-align != null) {
+				text-align: $horizontal-align;
+			}
+
+		> * {
+			@include vendor('flex-shrink', '1');
+			@include vendor('flex-grow', '0');
+		}
+
+}
+@mixin flexgrid-columns($columns) {
+
+	> * {
+		$cell-width: 100% / $columns;
+		width: #{$cell-width};
+	}
+
+}
+@mixin flexgrid-gutters($columns, $gutters) {
+
+		> * {
+			$cell-width: 100% / $columns;
+
+			padding: ($gutters * 0.5);
+			width: $cell-width;
+		}
+
+}
+@mixin flexgrid-gutters-flush($columns, $gutters) {
+
+		> * {
+			$cell-width: 100% / $columns;
+			$cell-width-pad: $gutters / $columns;
+
+			padding: ($gutters * 0.5);
+			width: calc(#{$cell-width} + #{$cell-width-pad});
+		}
+
+		> :nth-child(-n + #{$columns}) {
+			padding-top: 0;
+		}
+
+		> :nth-last-child(-n + #{$columns}) {
+			padding-bottom: 0;
+		}
+
+		> :nth-child(#{$columns}n + 1) {
+			padding-left: 0;
+		}
+
+		> :nth-child(#{$columns}n) {
+			padding-right: 0;
+		}
+
+		> :nth-child(#{$columns}n + 1),
+		> :nth-child(#{$columns}n) {
+			$cell-width: 100% / $columns;
+			$cell-width-pad: ($gutters / $columns) - ($gutters / 2);
+
+			width: calc(#{$cell-width} + #{$cell-width-pad});
+		}
+
+}
+@mixin flexgrid-gutters-flush-reset($columns, $gutters, $prev-columns) {
+
+		> * {
+			$cell-width: 100% / $prev-columns;
+			$cell-width-pad: $gutters / $prev-columns;
+
+			padding: ($gutters * 0.5);
+			width: calc(#{$cell-width} + #{$cell-width-pad});
+		}
+
+		> :nth-child(-n + #{$prev-columns}) {
+			padding-top: ($gutters * 0.5);
+		}
+
+		> :nth-last-child(-n + #{$prev-columns}) {
+			padding-bottom: ($gutters * 0.5);
+		}
+
+		> :nth-child(#{$prev-columns}n + 1) {
+			padding-left: ($gutters * 0.5);
+		}
+
+		> :nth-child(#{$prev-columns}n) {
+			padding-right: ($gutters * 0.5);
+		}
+
+		> :nth-child(#{$prev-columns}n + 1),
+		> :nth-child(#{$prev-columns}n) {
+			$cell-width: 100% / $columns;
+			$cell-width-pad: $gutters / $columns;
+
+			padding: ($gutters * 0.5);
+			width: calc(#{$cell-width} + #{$cell-width-pad});
+		}
+
+}
+
+@mixin flexgrid-debug() {
+
+	box-shadow: 0 0 0 1px red;
+
+	> * {
+		box-shadow: inset 0 0 0 1px blue;
+		position: relative;
+
+		> * {
+			position: relative;
+			box-shadow: inset 0 0 0 1px green;
+		}
+	}
+
+}
+@mixin flexgrid($settings: ()) {
+
+			$debug: false;
+
+			@if (map-has-key($settings, 'debug')) {
+				$debug: map-get($settings, 'debug');
+			}
+
+			$vertical-align: null;
+
+			@if (map-has-key($settings, 'vertical-align')) {
+				$vertical-align: map-get($settings, 'vertical-align');
+			}
+
+			$horizontal-align: null;
+
+			@if (map-has-key($settings, 'horizontal-align')) {
+				$horizontal-align: map-get($settings, 'horizontal-align');
+			}
+
+			$columns: null;
+
+			@if (map-has-key($settings, 'columns')) {
+				$columns: map-get($settings, 'columns');
+			}
+			$gutters: 0;
+
+			@if (map-has-key($settings, 'gutters')) {
+				$gutters: map-get($settings, 'gutters');
+			}
+			$flush: true;
+
+			@if (map-has-key($settings, 'flush')) {
+				$flush: map-get($settings, 'flush');
+			}
+		@include flexgrid-base($vertical-align, $horizontal-align);
+
+		@if ($debug) {
+			@include flexgrid-debug;
+		}
+
+		@if ($columns != null) {
+
+				@include flexgrid-columns($columns);
+
+				@if ($gutters > 0) {
+
+						@if ($flush) {
+
+								@include flexgrid-gutters-flush($columns, $gutters);
+
+						}
+
+						@else {
+
+								@include flexgrid-gutters($columns, $gutters);
+
+						}
+
+				}
+
+		}
+
+}
+@mixin flexgrid-resize($settings: ()) {
+
+			$columns: 1;
+
+			@if (map-has-key($settings, 'columns')) {
+				$columns: map-get($settings, 'columns');
+			}
+
+			$gutters: 0;
+
+			@if (map-has-key($settings, 'gutters')) {
+				$gutters: map-get($settings, 'gutters');
+			}
+
+			$prev-columns: false;
+
+			@if (map-has-key($settings, 'prev-columns')) {
+				$prev-columns: map-get($settings, 'prev-columns');
+			}
+
+			$flush: true;
+
+			@if (map-has-key($settings, 'flush')) {
+				$flush: map-get($settings, 'flush');
+			}
+
+		@include flexgrid-columns($columns);
+
+		@if ($gutters > 0) {
+
+				@if ($flush) {
+
+						@if ($prev-columns) {
+
+								@if (type-of($prev-columns) != list) {
+									$prev-columns: ($prev-columns);
+								}
+
+								@each $x in $prev-columns {
+									@include flexgrid-gutters-flush-reset($columns, $gutters, $x);
+								}
+
+						}
+						@include flexgrid-gutters-flush($columns, $gutters);
+
+				}
+
+				@else {
+
+						@include flexgrid-gutters($columns, $gutters);
+
+				}
+
+		}
+
+}
