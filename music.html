@@ -139,14 +139,12 @@
             <section class="parallax-showcase signature-leon parallax-showcase-03 fullheight parallax" data-stellar-background-ratio="0.5">
                 <div class="valign">
                     <div class="project-title text-center">
-                        <a href="#"><h1 class="font3bold white">Nastali</h1></a>
+                        <h1 class="font3bold white">Nastali</h1>
                         <br>
-                         <div class="container-fix2">
+<iframe src="https://drive.google.com/file/d/1z6wQ5NTANHuz_4WPj_9mA6sLbrGn0aQo/preview" width="640" height="480"></iframe>
 
-                        <iframe width="840" height="473" src="https://drive.google.com/file/d/1nctjyWg7snkKdXhmI_0EItNGzMFf5L_O/preview" id = "myframe"frameborder="0" allowfullscreen></iframe>
-						</div>
                         
-                    </div>
+       </div>
                 </div>
 
               
@@ -205,6 +203,49 @@
     <script src="javascripts/custom/main.js"></script>
     <script src="javascripts/custom/elements.js"></script>
     <script src="videospotifyfix.js"></script>
+    	<script>// By Chris Coyier & tweaked by Mathias Bynens
+
+$(function() {
+
+	// Find all YouTube videos
+	var $allVideos = $("iframe[src^='https://drive.google.com']"),
+
+	    // The element that is fluid width
+	    $fluidEl = $("body");
+
+	// Figure out and save aspect ratio for each video
+	$allVideos.each(function() {
+
+		$(this)
+			.data('aspectRatio', this.height / this.width)
+			
+			// and remove the hard coded width/height
+			.removeAttr('height')
+			.removeAttr('width');
+
+	});
+
+	// When the window is resized
+	// (You'll probably want to debounce this)
+	$(window).resize(function() {
+
+		var newWidth = $fluidEl.width();
+		
+		// Resize all videos according to their own aspect ratio
+		$allVideos.each(function() {
+
+			var $el = $(this);
+			$el
+				.width(newWidth)
+				.height(newWidth * $el.data('aspectRatio'));
+
+		});
+
+	// Kick off one resize to fix all videos on page load
+	}).resize();
+
+});</script>
+
 
 
 </body>
