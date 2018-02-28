@@ -29,6 +29,8 @@
 <link rel="stylesheet" href="stylesheets/animatedheaders.css">
 <link rel="stylesheet" href="stylesheets/slimmenu.css">
 <link rel="stylesheet" href="stylesheets/main.css">
+<link rel="stylesheet" href="videospotifyfix.css">
+
 <link rel="stylesheet" href="stylesheets/main-bg.css">
 <link rel="stylesheet" href="stylesheets/main-responsive.css">
 <!-- LESS
@@ -106,7 +108,7 @@
   <div class="inner-wrap container add-top">
     <section class="hero-text signature-leon text-center ">
       <div class="row">
-        <article class="col-d-8 col-md-offset-2 text-center">
+        <article class="col-d-8 col-md-offset-center text-center">
           <h3 class="black font2">Hummingbird: Rebirth</h3>
           <div class="liner color-bg"></div>
           <h6 class="grey font3 add-top-quarter">Connect, feel, and aspire strength, equality, and growth.<br>
@@ -121,7 +123,10 @@
       <div class="container-fluid">
         <div class="row add-top add-bottom">
           <article class="col-md-12 text-center">
-            <iframe src="https://open.spotify.com/embed/user/shifter.chied/playlist/5ITfzPVrncDK2UkgKaOGr2" width="800" height="449" frameborder="0" allowtransparency="true"></iframe>
+           <div class="container-fix">
+
+            <iframe src="https://open.spotify.com/embed/user/shifter.chied/playlist/5ITfzPVrncDK2UkgKaOGr2" width="800" height="449" frameborder="0" id= "myframe" allowtransparency="true"></iframe>
+			  </div>
           </article>
           <br>
           <br>
@@ -170,5 +175,7 @@
 <script src="javascripts/libs/animatedheaders.js"></script>
 <script src="javascripts/custom/main.js"></script>
 <script src="javascripts/custom/elements.js"></script>
+<script src="videospotifyfix.js"></script>
+
 </body>
 </html>

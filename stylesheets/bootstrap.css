@@ -2078,6 +2078,10 @@ pre code {
   .col-md-offset-2 {
     margin-left: 16.66666667%;
   }
+	.col-md-offset-center {
+    margin-left: auto;
+	margin-right:auto;
+  }
   .col-md-offset-1 {
     margin-left: 8.33333333%;
   }
