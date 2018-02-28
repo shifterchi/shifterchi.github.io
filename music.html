@@ -38,27 +38,8 @@
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/main-bg.css">
     <link rel="stylesheet" href="stylesheets/main-responsive.css">
-    <script type="application/javascript">
+    <link rel="stylesheet" href="videospotifyfix.css">
 
-function resizeIFrameToFitContent( iFrame ) {
-
-    iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
-    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-}
-
-window.addEventListener('DOMContentLoaded', function(e) {
-
-    var iFrame = document.getElementById( 'iFrame1' );
-    resizeIFrameToFitContent( iFrame );
-
-    // or, to resize all iframes:
-    var iframes = document.querySelectorAll("iframe");
-    for( var i = 0; i < iframes.length; i++) {
-        resizeIFrameToFitContent( iframes[i] );
-    }
-} );
-
-</script>
 
     <!-- LESS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -160,9 +141,10 @@ window.addEventListener('DOMContentLoaded', function(e) {
                     <div class="project-title text-center">
                         <a href="#"><h1 class="font3bold white">Nastali</h1></a>
                         <br>
-                        <iframe width="840" height="473" src="https://drive.google.com/file/d/1AGqt37FDovTdUkZEjuGBAPY3-prBWzil/preview" frameborder="0" id="iFrame1" allowfullscreen></iframe>
-                        
-                    </div>
+                                   <div class="container-fix">
+
+                        <iframe width="840" height="473" src="https://drive.google.com/file/d/1nctjyWg7snkKdXhmI_0EItNGzMFf5L_O/preview" id = "myframe"frameborder="0" allowfullscreen></iframe>
+						</div>
                 </div>
 
               </div>
@@ -174,10 +156,12 @@ window.addEventListener('DOMContentLoaded', function(e) {
               <div class="parallax-showcase-overlay fullheight">
                 <div class="valign">
                     <div class="project-title text-center">
-                        <a href="#"><h1 class="font3bold white">Breaking My Heart 4U</h1></a>
+                        <a href="#"><h1 class="font3bold white">Nastali</h1></a>
                         <br>
-                                                <iframe width="840" height="473" src="https://drive.google.com/file/d/154hS08YJg6P6DeRixllezV6UuhFwS1Tr/preview" frameborder="0" id="iFrame1" allowfullscreen></iframe>
+                                   <div class="container-fix">
 
+                        <iframe width="840" height="473" src="https://drive.google.com/file/d/1nctjyWg7snkKdXhmI_0EItNGzMFf5L_O/preview" id = "myframe"frameborder="0" allowfullscreen></iframe>
+						</div>
                         
                     </div>
                 </div>
@@ -190,9 +174,12 @@ window.addEventListener('DOMContentLoaded', function(e) {
               <div class="parallax-showcase-overlay fullheight">
                 <div class="valign">
                     <div class="project-title text-center">
-                        <a href="#"><h1 class="font3bold white">BRWN (Losing Myself)</h1></a>
+                        <a href="#"><h1 class="font3bold white">Nastali</h1></a>
                         <br>
-                        <iframe width="840" height="473" src="https://drive.google.com/file/d/1bpCLsh882_5b9eo6xXwuBf-PdK_BpF7v/preview" frameborder="0" id="iFrame1" allowfullscreen></iframe>
+                                   <div class="container-fix">
+
+                        <iframe width="840" height="473" src="https://drive.google.com/file/d/1nctjyWg7snkKdXhmI_0EItNGzMFf5L_O/preview" id = "myframe"frameborder="0" allowfullscreen></iframe>
+						</div>
                         
                     </div>
                 </div>
@@ -253,6 +240,8 @@ window.addEventListener('DOMContentLoaded', function(e) {
     <script src="javascripts/libs/bootstrap.min.js"></script>
     <script src="javascripts/custom/main.js"></script>
     <script src="javascripts/custom/elements.js"></script>
+    <script src="videospotifyfix.js"></script>
+
 
 </body>
 
