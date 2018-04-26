@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* MAIN-BG.CSS contains Background Image paths & definition rules powered by CSS
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -124,4 +125,132 @@
 }
 .bloom-bg{
     background-image: url('https://i.imgur.com/97dd1NM.jpg');
+=======
+/* MAIN-BG.CSS contains Background Image paths & definition rules powered by CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.home-bg {
+    background-image: url('https://i.imgur.com/YtlKIdu.jpg');
+}
+.homej1-bg {
+    background-image: url('https://i.imgur.com/tFeNT1j.jpg');
+}
+.homej2-bg{
+    background-image: url('https://i.imgur.com/ddgNfEj.jpg');
+}
+.homej3-bg{
+    background-image: url('https://i.imgur.com/0bXbg3I.jpg');
+}
+.homej4-bg{
+    background-image: url('https://i.imgur.com/yEWwob6.jpg');
+}
+.homej5-bg{
+    background-image: url('https://i.imgur.com/GGuD48c.jpg');
+}
+.homej6-bg{
+    background-image: url('https://i.imgur.com/arEgrdm.jpg');
+}
+.techinfluences-bg{
+	background-image: url('https://i.imgur.com/v17m3Zp.jpg')
+}
+.influence-bg{
+	background-image: url('http://thesocialrush.com/wp-content/uploads/2017/05/image-1.jpg')
+}
+.about-bg {
+    background-image: url('../images/bg/04.jpg');
+}
+.journal-bg {
+    background-image: url('https://i.imgur.com/0DnNKbK.jpg');
+
+}
+.journaln-bg{
+	
+}
+.contact-bg {
+    background-image: url('https://i.imgur.com/tGN1YRV.jpg');
+}
+.project-01-carousel-item-01{
+    background-image: url('../images/project/project01/01.jpg');
+}
+.project-01-carousel-item-02{
+    background-image: url('../images/project/project01/02.jpg');
+}
+.project-01-carousel-item-03{
+    background-image: url('../images/project/project01/03.jpg');
+}
+.parallax-showcase-01{
+    background-image: url('https://i.imgur.com/ZNV3Io5.jpg');
+}
+.parallax-showcase-02{
+    background-image: url('https://i.imgur.com/7BbrH8k.jpg');
+}
+.parallax-showcase-03{
+    background-image: url('https://i.imgur.com/ol6ln0h.jpg');
+}
+.parallax-showcase-04{
+    background-image: url('https://i.imgur.com/imU5Qyw.jpg');
+}
+.parallax-showcase-05{
+    background-image: url('https://i.imgur.com/ddWSrah.jpg');
+}
+.parallax-showcase-06{
+    background-image: url('https://i.imgur.com/MAyAaW0.jpg');
+}
+.call-to-action-bg{
+    background-image: url('https://i.imgur.com/4qMRdSn.jpg');
+}
+.stats-bg{
+    background-image: url('../images/bg/05.jpg');
+}
+.journalentry2-bg:{
+    background-image: url('http://papers.co/wallpaper/papers.co-ng82-night-wood-mountain-star-sky-nature-bw-dark-36-3840x2400-4k-wallpaper.jpg');
+}
+.journalentry3-bg:{
+    background-image: url('http://papers.co/wallpaper/papers.co-nu96-mountain-fall-forest-nature-36-3840x2400-4k-wallpaper.jpg');
+}
+.journalentry4-bg:{
+    background-image: url('http://papers.co/wallpaper/papers.co-nu92-beach-sea-nature-36-3840x2400-4k-wallpaper.jpg');
+}
+.journalentry5-bg:{
+    background-image: url('http://papers.co/wallpaper/papers.co-vr22-bubble-underwater-swim-bw-dark-pattern-36-3840x2400-4k-wallpaper.jpg');
+}
+.journalentry6-bg:{
+    background-image: url('http://papers.co/wallpaper/papers.co-bc62-moon-anime-night-art-illustration-36-3840x2400-4k-wallpaper.jpg');
+}
+
+
+
+.journal.signature-leon .news-block-01:hover{
+    background-image: url('https://i.imgur.com/tFeNT1j.jpg');
+}
+.journal.signature-leon .news-block-02:hover{
+    background-image: url('https://i.imgur.com/ddgNfEj.jpg');
+}
+.journal.signature-leon .news-block-03:hover{
+    background-image: url('https://i.imgur.com/0bXbg3I.jpg');
+}
+.journal.signature-leon .news-block-04:hover{
+    background-image: url('https://i.imgur.com/yEWwob6.jpg');
+}
+.journal.signature-leon .news-block-05:hover{
+    background-image: url('https://i.imgur.com/GGuD48c.jpg');
+}
+.journal.signature-leon .news-block-06:hover{
+    background-image: url('https://i.imgur.com/arEgrdm.jpg');
+}
+.post-bg{
+    background-image: url('../images/news/post/01.jpg');
+}
+.project-01-bg{
+    background-image: url('../images/project/project01/01.jpg');
+}
+.project-02-bg{
+    background-image: url('../images/project/project01/02.jpg');
+}
+.music-bg{
+    background-image: url('https://i.imgur.com/XGvMWZQ.jpg');
+}
+.bloom-bg{
+    background-image: url('https://i.imgur.com/97dd1NM.jpg');
+>>>>>>> origin/master
 }
